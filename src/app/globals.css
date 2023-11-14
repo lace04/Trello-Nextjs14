@@ -1,6 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body,
+:root{
+  height: 100%;
+}
+
+/* esta clase es para que el texto se ajuste al tamaño del contenedor */
+.text-balance {
+  text-wrap: balance;
+}
  
 @layer base {
   :root {
