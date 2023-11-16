@@ -63,7 +63,7 @@ export const FormPopover = ({
         sideOffset={sideOffset}
       >
         <div className='text-sm font-medium text-center text-neutral-600 pb-4'>
-          Create board
+          Crear tablero
         </div>
         <PopoverClose ref={closeRef} asChild>
           <Button
@@ -78,12 +78,12 @@ export const FormPopover = ({
             <FormPicker id='image' errors={fieldErrors} />
             <FormInput
               id='title'
-              label='Board title'
+              label='Título'
               type='text'
               errors={fieldErrors}
             />
           </div>
-          <FormSubmit className='w-full'>Create</FormSubmit>
+          <FormSubmit className='w-full'>Crear</FormSubmit>
         </form>
       </PopoverContent>
     </Popover>
