@@ -2,9 +2,11 @@
 
 import { forwardRef } from 'react';
 import { useFormStatus } from 'react-dom';
+
+import { cn } from '@/lib/utils';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
-import { cn } from '@/lib/utils';
+
 import { FormErrors } from './form-errors';
 
 interface FormInputProps {
@@ -25,13 +27,13 @@ export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
     {
       id,
       label,
-      type = 'text',
+      type,
       placeholder,
       required,
       disabled,
       errors,
       className,
-      defaultValue,
+      defaultValue = '',
       onBlur,
     },
     ref
@@ -44,7 +46,7 @@ export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
           {label ? (
             <Label
               htmlFor={id}
-              className='text-sm font-semibold text-neutral-700'
+              className='text-xs font-semibold text-neutral-700'
             >
               {label}
             </Label>
@@ -57,6 +59,8 @@ export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(
             name={id}
             id={id}
             placeholder={placeholder}
+            type={type}
+            disabled={pending || disabled}
             className={cn('text-sm px-2 py-1 h-7', className)}
             aria-describedby={`${id}-error`}
           />

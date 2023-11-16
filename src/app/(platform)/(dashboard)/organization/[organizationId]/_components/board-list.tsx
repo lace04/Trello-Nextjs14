@@ -8,7 +8,7 @@ import { Hint } from '@/components/hint';
 import { Skeleton } from '@/components/ui/skeleton';
 import { FormPopover } from '@/components/form/form-popover';
 
-async function BoardList() {
+export const BoardList = async () => {
   const { orgId } = auth();
 
   if (!orgId) {
@@ -47,12 +47,12 @@ async function BoardList() {
             role='button'
             className='aspect-video relative h-full w-full bg-muted rounded-sm flex flex-col gap-y-1 items-center justify-center hover:opacity-75 transition'
           >
-            <p className='text-sm'>Create new board</p>
-            <span className='text-xs'>5 remaining</span>
+            <p className='text-sm'>Crear nuevo tablero</p>
+            <span className='text-xs'>5 restantes</span>
             <Hint
               sideOffset={40}
               description={`
-                Free Workspaces can have up to 5 open boards. For unlimited boards upgrade this workspace.
+              Los espacios de trabajo gratuitos pueden tener hasta 5 tableros abiertos. Para tableros ilimitados, actualice este espacio de trabajo.
               `}
             >
               <HelpCircle className='absolute bottom-2 right-2 h-[14px] w-[14px]' />
@@ -62,9 +62,7 @@ async function BoardList() {
       </div>
     </div>
   );
-}
-
-export default BoardList;
+};
 
 BoardList.Skeleton = function SkeletonBoardList() {
   return (

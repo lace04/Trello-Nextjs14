@@ -8,9 +8,9 @@ import { useMobileSidebar } from '@/hooks/use-mobile-sidebar';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 
-import Sidebar from './sidebar';
+import { Sidebar } from './sidebar';
 
-function MobileSidebar() {
+export const MobileSidebar = () => {
   const pathname = usePathname();
   const [isMounted, setIsMounted] = useState(false);
 
@@ -26,7 +26,9 @@ function MobileSidebar() {
     onClose();
   }, [pathname, onClose]);
 
-  if (!isMounted) return null;
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <>
@@ -45,6 +47,4 @@ function MobileSidebar() {
       </Sheet>
     </>
   );
-}
-
-export default MobileSidebar;
+};
