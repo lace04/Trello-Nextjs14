@@ -37,7 +37,7 @@ export const BoardOptions = ({ id }: BoardOptionsProps) => {
       </PopoverTrigger>
       <PopoverContent className='px-0 pt-3 pb-3' side='bottom' align='start'>
         <div className='text-sm font-medium text-center text-neutral-600 pb-4'>
-          Board actions
+          Acciones
         </div>
         <PopoverClose asChild>
           <Button
