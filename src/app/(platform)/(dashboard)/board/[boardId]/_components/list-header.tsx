@@ -9,6 +9,8 @@ import { useAction } from '@/hooks/use-action';
 import { updateList } from '@/actions/update-list';
 import { FormInput } from '@/components/form/form-input';
 
+import { ListOptions } from './list-options';
+
 interface ListHeaderProps {
   data: List;
 }
@@ -32,9 +34,9 @@ export const ListHeader = ({ data }: ListHeaderProps) => {
     setIsEditing(false);
   };
 
-  const { execute, fieldErrors } = useAction(updateList, {
+  const { execute } = useAction(updateList, {
     onSuccess: (data) => {
-      toast.success(`Renombrado a "${data.title}"`);
+      toast.success(`Renamed to "${data.title}"`);
       setTitle(data.title);
       disableEditing();
     },
@@ -79,10 +81,9 @@ export const ListHeader = ({ data }: ListHeaderProps) => {
           <input hidden id='boardId' name='boardId' value={data.boardId} />
           <FormInput
             ref={inputRef}
-            errors={fieldErrors}
             onBlur={onBlur}
             id='title'
-            placeholder='Título de la lista'
+            placeholder='Enter list title..'
             defaultValue={title}
             className='text-sm px-[7px] py-1 h-7 font-medium border-transparent hover:border-input focus:border-input transition truncate bg-transparent focus:bg-white'
           />
@@ -96,6 +97,7 @@ export const ListHeader = ({ data }: ListHeaderProps) => {
           {title}
         </div>
       )}
+      <ListOptions onAddCard={() => {}} data={data} />
     </div>
   );
 };
