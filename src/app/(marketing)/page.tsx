@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
 const headingFont = localFont({
-  src: '../../public/fonts/font.woff2',
+  src: '../../../public/fonts/font.woff2',
 });
 
 const textFont = Poppins({
@@ -29,7 +29,7 @@ const MarketingPage = () => {
           Administración de tareas No 1.
         </div>
         <h1 className='text-3xl md:text-6xl text-center text-neutral-800 mb-6'>
-          Taskify ayuda a tu equipo a avanzar
+          Tasks ayuda a tu equipo a avanzar
         </h1>
         <div className='text-3xl md:text-6xl bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white px-4 p-2 rounded-md pb-4 w-fit'>
           ¡Adelante!
@@ -43,10 +43,10 @@ const MarketingPage = () => {
       >
         Colabora, gestiona proyectos y alcanza nuevos picos de productividad.
         Desde rascacielos hasta la oficina en casa, la forma en que trabaja tu
-        equipo es única: logra todo con Taskify
+        equipo es única: logra todo con Tasks
       </div>
       <Button className='mt-6' size='lg' asChild>
-        <Link href='/sign-up'>Obtén Taskify gratis</Link>
+        <Link href='/sign-up'>Obtén Tasks gratis</Link>
       </Button>
     </div>
   );

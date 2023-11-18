@@ -19,10 +19,10 @@ export const Logo = () => {
           width={30}
         />
         <p className={cn(
-          "text-lg text-neutral-700 pb-1",
+          "text-lg text-neutral-700",
           headingFont.className,
         )}>
-          Taskify
+          Tasks
         </p>
       </div>
     </Link>

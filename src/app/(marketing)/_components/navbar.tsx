@@ -13,7 +13,7 @@ export const Navbar = () => {
             <Link href='/sign-in'>Inicio de sesión</Link>
           </Button>
           <Button size='sm' asChild>
-            <Link href='/sign-up'>Obtén Taskify gratis</Link>
+            <Link href='/sign-up'>Obtén Tasks gratis</Link>
           </Button>
         </div>
       </div>
