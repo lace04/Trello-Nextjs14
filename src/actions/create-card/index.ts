@@ -35,7 +35,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
     if (!list) {
       return {
-        error: 'List not found',
+        error: 'Lista no encontrada',
       };
     }
 
@@ -63,7 +63,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-      error: 'Failed to create.',
+      error: 'No se pudo crear.',
     };
   }
 

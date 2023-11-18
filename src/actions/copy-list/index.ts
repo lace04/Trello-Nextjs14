@@ -38,7 +38,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
 
     if (!listToCopy) {
-      return { error: 'List not found' };
+      return { error: 'Lista no encontrada' };
     }
 
     const lastList = await db.list.findFirst({
@@ -77,7 +77,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-      error: 'Failed to copy.',
+      error: 'No se pudo copiar.',
     };
   }
 

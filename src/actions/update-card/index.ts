@@ -46,7 +46,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-      error: 'Failed to update.',
+      error: 'No se pudo actualizar.',
     };
   }
 

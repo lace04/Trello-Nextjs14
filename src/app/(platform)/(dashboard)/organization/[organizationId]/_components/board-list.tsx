@@ -7,6 +7,9 @@ import { db } from '@/lib/db';
 import { Hint } from '@/components/hint';
 import { Skeleton } from '@/components/ui/skeleton';
 import { FormPopover } from '@/components/form/form-popover';
+import { MAX_FREE_BOARDS } from '@/constants/boards';
+import { getAvailableCount } from '@/lib/org-limit';
+import { checkSubscription } from '@/lib/subscription';
 
 export const BoardList = async () => {
   const { orgId } = auth();
@@ -24,11 +27,14 @@ export const BoardList = async () => {
     },
   });
 
+  const availableCount = await getAvailableCount();
+  const isPro = await checkSubscription();
+
   return (
     <div className='space-y-4'>
       <div className='flex items-center font-semibold text-lg text-neutral-700'>
         <User2 className='h-6 w-6 mr-2' />
-        Your boards
+        Tus tableros
       </div>
       <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4'>
         {boards.map((board) => (
@@ -48,7 +54,11 @@ export const BoardList = async () => {
             className='aspect-video relative h-full w-full bg-muted rounded-sm flex flex-col gap-y-1 items-center justify-center hover:opacity-75 transition'
           >
             <p className='text-sm'>Crear nuevo tablero</p>
-            <span className='text-xs'>5 restantes</span>
+            <span className='text-xs'>
+              {isPro
+                ? 'Unlimited'
+                : `${MAX_FREE_BOARDS - availableCount} restantes.`}
+            </span>
             <Hint
               sideOffset={40}
               description={`

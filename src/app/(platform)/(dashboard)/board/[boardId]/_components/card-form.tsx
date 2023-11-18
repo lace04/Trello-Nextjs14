@@ -75,7 +75,7 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProps>(
             errors={fieldErrors}
           />
           <input hidden id='listId' name='listId' value={listId} />
-          <div className='flex items-center gap-x-1'>
+          <div className='flex items-center justify-between gap-x-1'>
             <FormSubmit>Agregar Tarjeta</FormSubmit>
             <Button onClick={disableEditing} size='sm' variant='ghost'>
               <X className='h-5 w-5' />

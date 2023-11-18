@@ -33,7 +33,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
     if (!board) {
       return {
-        error: 'Board not found',
+        error: 'Tablero no encontrado',
       };
     }
 
@@ -61,7 +61,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-      error: 'Failed to create.',
+      error: 'No se pudo crear.',
     };
   }
 

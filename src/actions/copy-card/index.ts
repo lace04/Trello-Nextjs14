@@ -36,7 +36,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
 
     if (!cardToCopy) {
-      return { error: 'Card not found' };
+      return { error: 'Tarjeta no encontrada' };
     }
 
     const lastCard = await db.card.findFirst({
@@ -49,7 +49,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
     card = await db.card.create({
       data: {
-        title: `${cardToCopy.title} - Copy`,
+        title: `${cardToCopy.title} - Copiar`,
         description: cardToCopy.description,
         order: newOrder,
         listId: cardToCopy.listId,
@@ -64,7 +64,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     });
   } catch (error) {
     return {
-      error: 'Failed to copy.',
+      error: 'No se pudo copiar.',
     };
   }
 
