@@ -9,16 +9,18 @@ export const UpdateCard = z.object({
         invalid_type_error: 'Description is required',
       })
       .min(3, {
-        message: 'Descripción demasiado corta.',
+        message: 'Descripción demasiado corta',
       })
   ),
-  title: z
-    .string({
-      required_error: 'Title is required',
-      invalid_type_error: 'Title is required',
-    })
-    .min(3, {
-      message: 'Título demasiado corto.',
-    }),
+  title: z.optional(
+    z
+      .string({
+        required_error: 'Title is required',
+        invalid_type_error: 'Title is required',
+      })
+      .min(3, {
+        message: 'Título demasiado corto',
+      })
+  ),
   id: z.string(),
 });
