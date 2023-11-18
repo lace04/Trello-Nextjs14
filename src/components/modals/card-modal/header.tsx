@@ -26,6 +26,10 @@ export const Header = ({ data }: HeaderProps) => {
         queryKey: ['card', data.id],
       });
 
+      queryClient.invalidateQueries({
+        queryKey: ['card-logs', data.id],
+      });
+
       toast.success(`Renamed to "${data.title}"`);
       setTitle(data.title);
     },
@@ -71,7 +75,7 @@ export const Header = ({ data }: HeaderProps) => {
           />
         </form>
         <p className='text-sm text-muted-foreground'>
-          en lista <span className='underline'>{data.list.title}</span>
+          en la lista <span className='underline'>{data.list.title}</span>
         </p>
       </div>
     </div>
