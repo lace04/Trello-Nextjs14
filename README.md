@@ -30,7 +30,7 @@ Key Features:
 ### Cloning the repository
 
 ```shell
-git clone https://github.com/lace04/Trello-Clone-Nextjs14.git
+git clone https://github.com/lace04/Trello-Nextjs14.git
 ```
 
 ### Install packages
